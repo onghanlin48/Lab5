@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+    <meta name="color-scheme" content="light dark">
+    <link rel="stylesheet" href="css/index.css">
+    <title>HOME</title>
+    <link rel="stylesheet" href="jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.css">
+    <script type="text/javascript" src="jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript" src="javascript.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div data-role="page" data-theme="b" id="home">
+        <div data-role="header">
+            <h1>HOME</h1>
+        </div>
+        <div data-role="content" data-theme="e">
+            <div class="choice_list">
+                <ul data-role="listview" data-inset="true">
+                    <li>
+                        <a href="#employee" data-transition="pop">
+                            <img src="img/employee.png">
+                            <h3>
+                                EMPLOYEE
+                            </h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#product" data-transition="pop">
+                            <img src="img/product.png">
+                            <h3>
+                                PRODUCT
+                            </h3>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <button onclick="dialogAlert()">ALERT</button>
+            <button onclick="cordovaDevice()">CORDOVA DEVICE</button>
+            <button onclick="cameraTakePicture()">TAKE PICTURE</button>
+            <center>
+                <img id="myImage"></img>
+            </center>
+        </div>
+    </div>
+    <div data-role="page" data-theme="b" id="employee">
+        <div data-role="header">
+            <a href="#home" data-role="button" data-icon="arrow-l" onmousemove="white(this)" onmouseout="black(this)"
+                data-transition="flip">Back</a>
+            <h1>Employee List</h1>
+            <a href="#home" data-role="button" data-icon="home" onmousemove="white(this)" onmouseout="black(this)"
+                data-transition="flow">Home</a>
+        </div>
+        <div data-role="content">
+            <div class="choice_list">
+                <ul data-role="listview" data-inset="true" data-filter="true" data-split-icon="check">
+                    <li><a href="#employee_detail" data-transition="slidedown" onclick="ong()">
+                            <img src="img/ong.png">
+                            <h3>Ong Han Lin</h3>
+                            <p>CEO</p>
+                        </a>
+                    </li>
+                    <li><a href="#employee_detail" data-transition="slidedown" onclick="chieng()">
+                            <img src="img/chieng.png">
+                            <h3>Chieng Kung Jie</h3>
+                            <p>Manager</p>
+                        </a>
+                    </li>
+                    <li><a href="#employee_detail" data-transition="slidedown" onclick="philip()">
+                            <img src="img/philip.png">
+                            <h3>Philip Ling Tai Yew</h3>
+                            <p>Assistant-manager</p>
+                        </a>
+                    </li>
+                    <li><a href="#employee_detail" data-transition="slidedown" onclick="ling()">
+                            <img src="img/siew.png">
+                            <h3>Ling Siew Siew</h3>
+                            <p>Secretary</p>
+                        </a>
+                    </li>
+                    <li><a href="#employee_detail" data-transition="slidedown" onclick="liz()">
+                            <img src="img/liz.png">
+                            <h3>Liz Wong Wan Qi</h3>
+                            <p>Secretary</p>
+                        </a>
+                    </li>
+                    <li><a href="#employee_detail" data-transition="slidedown" onclick="aida()">
+                            <img src="img/aida.png">
+                            <h3>Aida Hartini Binti Ismail</h3>
+                            <p>Marketing</p>
+                        </a>
+                    </li>
+                    <li><a href="#employee_detail" data-transition="slidedown" onclick="hazwani()">
+                            <img src="img/hazwani.png">
+                            <h3>Nurul Hazwani Binti Bujang @ Bohari</h3>
+                            <p>Marketing</p>
+                        </a>
+                    </li>
+                    <li><a href="#employee_detail" data-transition="slidedown" onclick="najah()">
+                            <img src="img/najah.png">
+                            <h3>Dayang Najah Aqilah</h3>
+                            <p>Marketing</p>
+                        </a>
+                    </li>
+                    <li><a href="#employee_detail" data-transition="slidedown" onclick="aziz()">
+                            <img src="img/aziz.png">
+                            <h3>Ol Abdul Aziz</h3>
+                            <p>Software Architect</p>
+                        </a>
+                    </li>
+                    <li><a href="#employee_detail" data-transition="slidedown" onclick="carol()">
+                            <img src="img/carol.png">
+                            <h3>Carolline Engda Anak Kiven</h3>
+                            <p>Sales Representative</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div data-role="page" data-theme="b" id="employee_detail">
+        <div data-role="header">
+            <a href="#employee" data-role="button" data-icon="arrow-l" onmousemove="white(this)"
+                onmouseout="black(this)" data-transition="flip">Back</a>
+            <h1>Employee Detail</h1>
+            <a href="#home" data-role="button" data-icon="home" onmousemove="white(this)" onmouseout="black(this)"
+                data-transition="flow">Home</a>
+        </div>
+        <div data-role="content">
+            <img src="img/ong.png" id="img">
+            <h3 id="name">ONG HAN LIN</h3>
+            <p id="position">
+                CEO
+            </p>
+            <br><br><br>
+            <ul data-role="listview" data-inset="true">
+                <li>
+                    <a data-transition="slidedown" onclick="display(img,age_dis,age)" href="#display">
+                        <h3 id="age_dis">
+                            Age
+                        </h3>
+                        <p id="age">
+                            20
+                        </p>
+                    </a>
+                </li>
+                <li onclick="email()">
+                    <a data-transition="slidedown">
+                        <h3>
+                            Email
+                        </h3>
+                        <p id="email">
+                            onghanlin48@gmail.com
+                        </p>
+                    </a>
+                </li>
+                <li>
+                    <a data-transition="slidedown" onclick="display(img,office_dis,office)" href="#display">
+                        <h3 id="office_dis">
+                            Call Office
+                        </h3>
+                        <p id="office">
+                            085-1234456
+                        </p>
+                    </a>
+                </li>
+                <li>
+                    <a data-transition="slidedown" onclick="display(img,persona_dis,persona)" href="#display">
+                        <h3 id="persona_dis">
+                            Call Persona
+                        </h3>
+                        <p id="persona">
+                            0138276847
+                        </p>
+                    </a>
+                </li>
+                <li onclick="whatsapp()">
+                    <a data-transition="slidedown">
+                        <h3>
+                            Whatsapp
+                        </h3>
+                        <p id="what">
+                            +60138276487
+                        </p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div data-role="page" data-theme="b" id="product">
+        <div data-role="header">
+            <a href="#home" data-role="button" data-icon="arrow-l" onmousemove="white(this)" onmouseout="black(this)"
+                data-transition="flip">Back</a>
+            <h1>product</h1>
+            <a href="#home" data-role="button" data-icon="home" onmousemove="white(this)" onmouseout="black(this)"
+                data-transition="flow">Home</a>
+        </div>
+        <div data-role="content">
+            <ul data-role="listview" data-inset="true">
+                <li data-role="list-divider">product</li>
+                <li onclick="display_p(Lamps)" href="#display"><a href="#display" id="Lamps">Lamps</a></li>
+                <li onclick="display_p(table)" href="#display"><a href="#display" id="table">Table</a></li>
+            </ul>
+            <img id="myImage"></img>
+        </div>
+    </div>
+    <div data-role="page" data-theme="b" id="display">
+        <div data-role="header">
+            <a onclick="back()" data-role="button" data-icon="arrow-l" onmousemove="white(this)"
+                onmouseout="black(this)" id="back" data-transition="flip">Back</a>
+            <h1>Detail</h1>
+            <a href="#home" data-role="button" data-icon="home" onmousemove="white(this)" onmouseout="black(this)"
+                data-transition="flow">Home</a>
+        </div>
+        <div data-role="content">
+            <img id="img_dis">
+            <h3 id="tittle_dis"></h3>
+            <p id="result_dis">
+            </p>
+        </div>
+    </div>
+    <script src="cordova.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
